@@ -7,16 +7,20 @@ const Cart = ({ cart, products, handleClearCart }) => {
    const [freeProduct, setFreeProducts] = useState({});
 
    const handleOffer = () => {
-      const randomNum = Math.floor(Math.random() * products.length) + 1;
-      const item = products[randomNum];
-      setFreeProducts(item);
+      if (cart) {
+         const randomNum = Math.floor(Math.random() * products.length) + 1;
+         const item = products[randomNum];
+         setFreeProducts(item);
+      }
    };
 
-   useEffect(()=>{
-      if(cart.length > 0){
+   useEffect(() => {
+      if (cart.length > 0) {
          setOffer(true);
+      } else {
+         setOffer(false);
       }
-   },[cart]);
+   }, [cart]);
 
    return (
       <div className="cart">
@@ -42,7 +46,11 @@ const Cart = ({ cart, products, handleClearCart }) => {
             </div>
          ))}
          <p>Buy one get one free</p>
-         <button onClick={handleOffer} className="offer-button" disabled={!offer}>
+         <button
+            onClick={handleOffer}
+            className={offer ? "offer-button" : "offer-button-disabled"}
+            disabled={!offer}
+         >
             get one for me
          </button>
 

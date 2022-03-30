@@ -14,12 +14,12 @@ const Shop = () => {
   }, []);
 
   const handleAddToCart = (selectedProduct) => {
-    const newCart = [...cart,selectedProduct];
+    const newCart = [...cart, selectedProduct];
     setCart(newCart);
   };
 
   const handleClearCart = () => {
-    console.log("Delete");
+    setCart([])
   };
 
   return (
