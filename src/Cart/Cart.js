@@ -41,7 +41,8 @@ const Cart = ({ cart, products, handleClearCart }) => {
                   <p>
                      {product.name} {product.color}
                   </p>
-                  <p>$ {product.price}</p>
+                  <p>${product.price}</p>
+                  <p>{product.quantity}</p>
                </div>
             </div>
          ))}
@@ -61,7 +62,7 @@ const Cart = ({ cart, products, handleClearCart }) => {
                   <p>
                      {freeProduct.name} {freeProduct.color}
                   </p>
-                  <p>{freeProduct.price}</p>
+                  <p>${freeProduct.price}</p>
                </div>
             </div>
          )}
