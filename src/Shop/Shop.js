@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
+import { addToLocalStorage } from "../Utils/Utils";
 import "./Shop.css";
 
 const Shop = () => {
@@ -25,6 +26,7 @@ const Shop = () => {
       newCart = [...rest, exist];
     }
     setCart(newCart)
+    addToLocalStorage(selectedProduct.id);
   };
 
   const handleClearCart = () => {

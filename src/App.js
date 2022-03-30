@@ -4,10 +4,10 @@ import Shop from "./Shop/Shop";
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar />
       <Shop />
-    </>
+    </div>
   );
 }
 
